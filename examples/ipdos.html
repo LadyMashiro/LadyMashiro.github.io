@@ -1,0 +1,289 @@
+ <!DOCTYPE html>
+<html lang="de-DE">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Administration Websolutions</title>
+		<script src="/poc-forms/res/js/jquery.min.js"></script>
+		<script src="/poc-forms/res/js/bootstrap.min.js"></script>
+		<script src="/poc-forms/res/js/bootstrap-datepicker.js"></script>
+		<script src="/poc-forms/res/js/locales/bootstrap-datepicker.de.js"></script>
+		<script src="/poc-forms/res/js/validator.min.js"></script>
+		<script src="/poc-forms/res/js/ajax.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/datepicker.css">
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/bootstrap.checkbox.css">
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/poc-forms/res/css/bootstrap-select.css">
+	</head>
+	<body>
+	<!-- Basislayout f�r die Webapplikation -->
+	<div id="base">
+
+		<div class="container">
+
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a href="/poc-forms/index.php"><img width="180" src="res/img/inselgruppe_logo.png" alt="Insel Gruppe"></a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Formulare <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Neues Formular erstellen</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Formulare anschauen / suchen</a></li>
+        </ul>
+      </li>
+								<li class="previous"><a href="/poc-forms/index.php">Zurück zur Übersicht</a></li>						<li><a href="/poc-forms/index.php?modul=page&amp;action=logout">Abmelden</a></li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Angemeldet als: <b>Eschler, Cynthia (DIM)</b> <span class="caret"></span></a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+<li class="divider"></li>
+<li><b>Rolle wechseln</b></li>
+<li><a class="btn btn-primary btn-block" role="button" href="/poc-forms/index.php?changerole=0">ADMIN</a></li>
+<li class="divider"></li>
+<li><b>Title:</b> ICT-Applikationsentwicklerin i-pdos</li>
+<li class="divider"></li>
+<li><b>Username:</b> I0303496</li>
+<li><b>Email:</b> cynthia.eschler@insel.ch</li>
+<li><b>Tel:</b> +41 31 63 2 00 17</li>
+<li class="divider"></li>
+<li><b>Direktion:</b> Direktion Dienste</li>
+<li><b>KST:</b> 52191</li>
+<li><b>Büro:</b> SCHWARZTORSTRASSE 96 A 704</li>
+</ul>
+</li>					</ul>
+				</div>
+			</nav>
+
+			<!-- <div class="panel panel-default">
+				<div class="panel-body">  -->
+					<div id="content" class="text-left">
+<form data-toggle="validator" class="form-horizontal" role="form" id="form" method="POST" action="/poc-forms/index.php">
+<input type="hidden" name="formtyp" value="smartphone">
+<input type="hidden" name="form_id" value="">
+<input type="hidden" name="modul" value="form" />
+<input type="hidden" name="action" value="new" />
+<div class="panel panel-default">
+<div class="panel-body">
+<fieldset form="form">
+<legend>Antragsteller</legend>
+<div class="form-group input-field " id="namerow">
+<div class="col-md-2"><label class="control-label required" for="name">Name <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="name" name="name" type="text" class="form-control" data-error="Bitte geben Sie mindestens 3 Zeichen ein" required="required" data-minlength="3" value="Eschler" data-field="sn">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="vornamerow">
+<div class="col-md-2"><label class="control-label required" for="vorname">Vorname <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="vorname" name="vorname" type="text" class="form-control" data-error="Bitte geben Sie mindestens 3 Zeichen ein" required="required" data-minlength="3" value="Cynthia" data-field="givenname">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="personalnr1row">
+<div class="col-md-2"><label class="control-label required" for="personalnr1">Personalnr. <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<div class="input-group"><input id="personalnr1" name="personalnr1" type="text" class="form-control" data-error="Bitte geben Sie die Personalnummer nach folgendem Muster ein: i1234567" required="required" value="I0303496" data-field="cn">
+<span data-toggle="tooltip" data-placement="left" title="Bitte im Format X1234567 angeben" class="input-group-addon time"><i class="fa fa-info"></i></span>
+</div>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="departementrow">
+<div class="col-md-2"><label class="control-label required" for="departement">Direktion / Departement <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="departement" name="departement" type="text" class="form-control" data-error="Bitte geben Sie mindestens 1 Zeichen ein" required="required" data-minlength="1" value="" data-field="dep">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="telrow">
+<div class="col-md-2"><label class="control-label required" for="tel">Interne Telefonnummer <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="tel" name="tel" type="text" class="form-control" data-error="Bitte geben Sie die interne 5-stellige Telefonnummer an" required="required" data-minlength="5" value="" data-field="tel">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="emailrow">
+<div class="col-md-2"><label class="control-label required" for="email">Email <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="email" name="email" type="text" class="form-control" required="required" value="cynthia.eschler@insel.ch" data-field="mail">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="kststellerow">
+<div class="col-md-2"><label class="control-label required" for="kststelle">Kostenstelle <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="kststelle" name="kststelle" type="text" class="form-control" data-error="Bitte geben Sie mindestens 5 Zeichen ein" required="required" data-minlength="5" value="52191" data-field="kst">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group textarea-field  required" id="rechnungsanschriftrow">
+<div class="col-md-2"><label class="control-label required" for="rechnungsanschrift">Rechnungsanschrift <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<textarea id="rechnungsanschrift" name="rechnungsanschrift" class="form-control" data-error="Sonstiges" required="required" rows="4" cols="60">Inselspital
+Universitätsspital Bern
+Finanzrechnung
+Freiburgstrasse
+3010 Bern</textarea>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<fieldset form="form">
+<legend>Angaben zur Bestellung</legend>
+<div class="form-group input-field " id="enduserrow">
+<div class="col-md-2"><label class="control-label required" for="enduser">Name EnduserIn <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="enduser" name="enduser" type="text" class="form-control" data-error="Bitte geben Sie mindestens 3 Zeichen ein" required="required" data-minlength="3">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="nummerrow">
+<div class="col-md-2"><label class="control-label" for="nummer">Handy-Nr. EnduserIn</label></div>
+<div class="col-md-10">
+<div class="input-group"><input id="nummer" name="nummer" type="text" class="form-control" data-error="Sonstiges">
+<span data-toggle="tooltip" data-placement="left" title="Unbedingt angeben, wenn bereits eine Nummer vorhanden ist" class="input-group-addon time"><i class="fa fa-info"></i></span>
+</div>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="phonerow">
+<div class="col-md-2"><label class="control-label required" for="phone">Produktbezeichnung* <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<input id="phone" name="phone" type="text" class="form-control" data-error="Sonstiges" required="required">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group comment-field " id="phonecommentrow">
+<div class="title"><i>*Es werden nur HTC-Geräte von der ICT supported.</i></div>
+<span class="help-block with-errors"></span>
+</div>
+<div class="form-group select-field  required" id="speicherrow">
+<div class="col-md-2"><label class="control-label required" for="speicher">Speicherplatz <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<select id="speicher" name="speicher" class="form-control" data-error="Sonstiges" required="required">
+<option value="">Bitte auswählen</option>
+<option value="HTC-Gerät (keine Angabe der Speichergrösse, da externe SD-Karte)">HTC-Gerät (keine Angabe der Speichergrösse, da externe SD-Karte)</option>
+<option value="8 GB">8 GB</option>
+<option value="16 GB">16 GB</option>
+<option value="32 GB">32 GB</option>
+<option value="64 GB">64 GB</option>
+<option value="128 GB">128 GB</option>
+</select>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group hradio-field " id="simrow">
+<div class="col-md-2"><label class="control-label" for="sim0">Art der SIM-Karte</label></div>
+<div class="col-md-10">
+<div class="radio radio-inline radio-primary">
+ <input id="sim0" name="sim" type="radio" class="form-control" data-error="Sonstiges" value="Mini-Sim">
+ <label for="sim0"><img class="icons" src="/poc-forms/res/img/smartphone/sim0.png" height="40" />Mini-Sim</label>
+</div>
+<div class="radio radio-inline radio-primary">
+ <input id="sim1" name="sim" type="radio" class="form-control" data-error="Sonstiges" value="Micro-Sim">
+ <label for="sim1"><img class="icons" src="/poc-forms/res/img/smartphone/sim1.png" height="40" />Micro-Sim</label>
+</div>
+<div class="radio radio-inline radio-primary">
+ <input id="sim2" name="sim" type="radio" class="form-control" data-error="Sonstiges" value="Nano-Sim">
+ <label for="sim2"><img class="icons" src="/poc-forms/res/img/smartphone/sim2.png" height="40" />Nano-Sim</label>
+</div>
+<div class="help-block">Wenn keine SIM angekreuzt wird, dann wird das Gerät ohne SIM-Karte geliefert.</div>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+<div class="form-group input-field " id="farberow">
+<div class="col-md-2"><label class="control-label" for="farbe">Farbe des Gerätes</label></div>
+<div class="col-md-10">
+<input id="farbe" name="farbe" type="text" class="form-control" data-error="Sonstiges">
+
+
+<span class="help-block with-errors"></span>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<fieldset form="form">
+<legend>Lieferung</legend>
+<div class="form-group hradio-field  required" id="lieferungrow">
+<div class="col-md-2"><label class="control-label required" for="lieferung0">Lieferungsart <i class="fa fa-asterisk" title="required"></i></label></div>
+<div class="col-md-10">
+<div class="radio radio-inline radio-primary">
+ <input id="lieferung0" name="lieferung" type="radio" class="form-control" data-error="Sonstiges" required="required" value="Wird in der ICT abgeholt">
+ <label for="lieferung0">Wird in der ICT abgeholt</label>
+</div>
+<div class="radio radio-inline radio-primary">
+ <input id="lieferung1" name="lieferung" type="radio" class="form-control" data-error="Sonstiges" required="required" value="Bitte zustellen (an DIM)">
+ <label for="lieferung1">Bitte zustellen (an DIM)</label>
+</div>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<fieldset form="form">
+<legend>Sonstiges</legend>
+<div class="form-group textarea-field " id="bemrow">
+<div class="col-md-2"><label class="control-label" for="bem">Zusätzliche Bemerkungen</label></div>
+<div class="col-md-10">
+<textarea id="bem" name="bem" class="form-control" data-error="Sonstiges" rows="4" cols="60"></textarea>
+<span class="help-block with-errors"></span>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+<!-- reset button --><button id="autofieldname22" name="autofieldname22" type="reset" class="btn btn-primary" data-error="Sonstiges">Formular zurücksetzen</button>
+<button id="autofieldname23" name="autofieldname23" type="submit" class="btn btn-primary" data-error="Sonstiges">Absenden</button>
+</form>
+<script>$(function () {$('[data-toggle="tooltip"]').tooltip({trigger:'click'})})</script></div>
+				<!-- </div>
+			</div>  -->
+
+						<form id="cmdcontrol" method="POST" action="/poc-forms/index.php">
+				<input type="hidden" name="modul" value="" />
+				<input type="hidden" name="action" value="" />
+				<input type="hidden" name="formtyp" value="" />
+				<input type="hidden" name="id" value="" />
+				<input type="hidden" name="fromcmd" value="form.new" />
+			</form>
+
+		</div>
+
+	</div>
+	</body>
+</html>
