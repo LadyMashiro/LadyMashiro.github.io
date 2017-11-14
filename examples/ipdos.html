@@ -31,14 +31,14 @@
 				<div class="panel-body">  -->
 					<div id="content" class="text-left">
 <form data-toggle="validator" class="form-horizontal" role="form" id="form" method="POST" action="../examples/ipdos.html">
-<input type="hidden" name="formtyp" value="smartphone">
+<input type="hidden" name="formtyp" value="test">
 <input type="hidden" name="form_id" value="">
 <input type="hidden" name="modul" value="form" />
 <input type="hidden" name="action" value="new" />
 <div class="panel panel-default">
 <div class="panel-body">
 <fieldset form="form">
-<legend>Antragsteller</legend>
+<legend>Titel</legend>
 <div class="form-group input-field " id="namerow">
 <div class="col-md-2"><label class="control-label required" for="name">Name <i class="fa fa-asterisk" title="required"></i></label></div>
 <div class="col-md-10">
@@ -104,23 +104,15 @@
 <span class="help-block with-errors"></span>
 </div>
 </div>
-<div class="form-group input-field " id="kststellerow">
-<div class="col-md-2"><label class="control-label required" for="kststelle">Kostenstelle <i class="fa fa-asterisk" title="required"></i></label></div>
-<div class="col-md-10">
-<input id="kststelle" name="kststelle" type="text" class="form-control" data-error="Bitte geben Sie mindestens 5 Zeichen ein" required="required" data-minlength="5" value="52191" data-field="kst">
 
-
-<span class="help-block with-errors"></span>
-</div>
-</div>
 <div class="form-group textarea-field  required" id="rechnungsanschriftrow">
 <div class="col-md-2"><label class="control-label required" for="rechnungsanschrift">Rechnungsanschrift <i class="fa fa-asterisk" title="required"></i></label></div>
 <div class="col-md-10">
 <textarea id="rechnungsanschrift" name="rechnungsanschrift" class="form-control" data-error="Sonstiges" required="required" rows="4" cols="60">Inselspital
-Universitätsspital Bern
-Finanzrechnung
-Freiburgstrasse
-3010 Bern</textarea>
+A
+B
+C
+D</textarea>
 <span class="help-block with-errors"></span>
 </div>
 </div>
@@ -130,7 +122,7 @@ Freiburgstrasse
 <div class="panel panel-default">
 <div class="panel-body">
 <fieldset form="form">
-<legend>Angaben zur Bestellung</legend>
+<legend>Titel 2</legend>
 <div class="form-group input-field " id="enduserrow">
 <div class="col-md-2"><label class="control-label required" for="enduser">Name EnduserIn <i class="fa fa-asterisk" title="required"></i></label></div>
 <div class="col-md-10">
@@ -211,17 +203,17 @@ Freiburgstrasse
 <div class="panel panel-default">
 <div class="panel-body">
 <fieldset form="form">
-<legend>Lieferung</legend>
+<legend>Titel 3</legend>
 <div class="form-group hradio-field  required" id="lieferungrow">
 <div class="col-md-2"><label class="control-label required" for="lieferung0">Lieferungsart <i class="fa fa-asterisk" title="required"></i></label></div>
 <div class="col-md-10">
 <div class="radio radio-inline radio-primary">
  <input id="lieferung0" name="lieferung" type="radio" class="form-control" data-error="Sonstiges" required="required" value="Wird in der ICT abgeholt">
- <label for="lieferung0">Wird in der ICT abgeholt</label>
+ <label for="lieferung0">Option 1</label>
 </div>
 <div class="radio radio-inline radio-primary">
  <input id="lieferung1" name="lieferung" type="radio" class="form-control" data-error="Sonstiges" required="required" value="Bitte zustellen (an DIM)">
- <label for="lieferung1">Bitte zustellen (an DIM)</label>
+ <label for="lieferung1">Option 2</label>
 </div>
 <span class="help-block with-errors"></span>
 </div>
@@ -229,20 +221,7 @@ Freiburgstrasse
 </fieldset>
 </div>
 </div>
-<div class="panel panel-default">
-<div class="panel-body">
-<fieldset form="form">
-<legend>Sonstiges</legend>
-<div class="form-group textarea-field " id="bemrow">
-<div class="col-md-2"><label class="control-label" for="bem">Zusätzliche Bemerkungen</label></div>
-<div class="col-md-10">
-<textarea id="bem" name="bem" class="form-control" data-error="Sonstiges" rows="4" cols="60"></textarea>
-<span class="help-block with-errors"></span>
-</div>
-</div>
-</fieldset>
-</div>
-</div>
+
 <!-- reset button --><button id="autofieldname22" name="autofieldname22" type="reset" class="btn btn-primary" data-error="Sonstiges">Formular zurücksetzen</button>
 <button id="autofieldname23" name="autofieldname23" type="submit" class="btn btn-primary" data-error="Sonstiges">Absenden</button>
 </form>
@@ -250,7 +229,7 @@ Freiburgstrasse
 				<!-- </div>
 			</div>  -->
 
-						<form id="cmdcontrol" method="POST" action="/poc-forms/index.php">
+						<form id="cmdcontrol" method="POST" action="../examples/ipdos.html">
 				<input type="hidden" name="modul" value="" />
 				<input type="hidden" name="action" value="" />
 				<input type="hidden" name="formtyp" value="" />
